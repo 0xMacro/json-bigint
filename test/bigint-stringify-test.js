@@ -1,8 +1,4 @@
-var mocha = require('mocha')
-  , assert = require('chai').assert
-  , expect = require('chai').expect
-  , BigNumber = require('bignumber.js')
-  ;
+var expect = require('chai').expect;
 
 describe("Testing native BigInt support: stringify", function () {
   if (typeof (BigInt) === 'undefined') {

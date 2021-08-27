@@ -1,8 +1,4 @@
-var mocha  = require('mocha')
-  , assert = require('chai').assert
-  , expect = require('chai').expect
-  , BigNumber = require('bignumber.js')
-  ;
+var expect = require('chai').expect;
 
 describe("Testing bigint support", function(){
     var input = '{"big":9223372036854775807,"small":123}';
@@ -22,7 +18,7 @@ describe("Testing bigint support", function(){
         var obj = JSONbig.parse(input);
         expect(obj.small.toString(), "string from small int").to.equal("123");
         expect(obj.big.toString(), "string from big int").to.equal("9223372036854775807");
-        expect(obj.big, "instanceof big int").to.be.instanceof(BigNumber);
+        expect(typeof obj.big, "big int").to.equal('bigint');
 
         var output = JSONbig.stringify(obj);
         expect(output).to.equal(input);

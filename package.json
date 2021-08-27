@@ -9,7 +9,7 @@
     "lib/stringify.js"
   ],
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js"
+    "test": "node ./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -18,17 +18,16 @@
   "keywords": [
     "JSON",
     "bigint",
-    "bignumber",
     "parse",
     "json"
   ],
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
+  "contributors": [
+    "Wajahat Iqbal <wajahat.iqbal@apimatic.io>"
+  ],
   "license": "MIT",
-  "dependencies": {
-    "bignumber.js": "^9.0.0"
-  },
   "devDependencies": {
-    "chai": "4.2.0",
-    "mocha": "8.0.1"
+    "chai": "^4.3.4",
+    "mocha": "^9.1.0"
   }
 }

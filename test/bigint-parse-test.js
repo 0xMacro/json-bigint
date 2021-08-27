@@ -1,8 +1,4 @@
-var mocha = require('mocha')
-  , assert = require('chai').assert
-  , expect = require('chai').expect
-  , BigNumber = require('bignumber.js')
-  ;
+var expect = require('chai').expect;
 
 describe("Testing native BigInt support: parse", function () {
   if (typeof (BigInt) === 'undefined') {
@@ -12,9 +8,7 @@ describe("Testing native BigInt support: parse", function () {
   var input = '{"big":92233720368547758070,"small":123}';
 
   it("Should show JSONbig does support parsing native BigInt", function (done) {
-    var JSONbig = require('../index')({
-      "useNativeBigInt": true
-    });
+    var JSONbig = require('../index')();
     var obj = JSONbig.parse(input);
     expect(obj.small, "small int").to.equal(123);
     expect(obj.big.toString(), "big int").to.equal("92233720368547758070");
@@ -24,8 +18,7 @@ describe("Testing native BigInt support: parse", function () {
 
   it("Should show JSONbig does support forced parsing to native BigInt", function (done) {
     var JSONbig = require('../index')({
-      "alwaysParseAsBig": true,
-      "useNativeBigInt": true
+      "alwaysParseAsBig": true
     });
     var obj = JSONbig.parse(input);
     expect(obj.big.toString(), "big int").to.equal("92233720368547758070");
@@ -37,9 +30,7 @@ describe("Testing native BigInt support: parse", function () {
 
 
   it("Should show JSONbig does support native Bigint parse/stringify roundtrip", function (done) {
-    var JSONbig = require('../index')({
-      "useNativeBigInt": true
-    });
+    var JSONbig = require('../index')();
     var obj = JSONbig.parse(input);
     var output = JSONbig.stringify(obj);
     expect(output).to.equal(input);
@@ -48,8 +39,7 @@ describe("Testing native BigInt support: parse", function () {
 
   it("Should show JSONbig does support native Bigint parse/stringify roundtrip when BigInt is forced", function (done) {
     var JSONbig = require('../index')({
-      "alwaysParseAsBig": true,
-      "useNativeBigInt": true
+      "alwaysParseAsBig": true
     });
     var obj = JSONbig.parse(input);
     var output = JSONbig.stringify(obj);
