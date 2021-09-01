@@ -1,6 +1,6 @@
 # @apimatic/json-bigint
 
-[![Build Status](https://github.com/apimatic/json-bigint/actions/workflows/main.yml/badge.svg)](https://github.com/apimatic/json-bigint/actions)
+[![Build Status](https://github.com/apimatic/json-bigint/actions/workflows/main.yml/badge.svg)](https://github.com/apimatic/json-bigint/actions/main.yml)
 <!--- [![NPM]()]() -->
 
 JSON.parse/stringify with bigints support. Based on Douglas Crockford [JSON.js](https://github.com/douglascrockford/JSON-js) package.
