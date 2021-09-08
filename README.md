@@ -1,9 +1,17 @@
 # @apimatic/json-bigint
 
 [![Build Status](https://github.com/apimatic/json-bigint/actions/workflows/main.yml/badge.svg)](https://github.com/apimatic/json-bigint/actions/main.yml)
-<!--- [![NPM]()]() -->
 
-JSON.parse/stringify with bigints support. Based on Douglas Crockford [JSON.js](https://github.com/douglascrockford/JSON-js) package.
+JSON.parse/stringify with bigints support. Based on Douglas Crockford [JSON.js](https://github.com/douglascrockford/JSON-js) package. This is a fork of [json-bigint](https://github.com/sidorares/json-bigint). This module does not have the support for bignumber.js and thus has that dependeny removed.
+
+Install the library using npm:
+```
+$ npm install @apimatic/json-bigint
+```
+The [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) project has a Typescript type definitions file for @apimatic/json-bigint.
+```
+$ npm install --save-dev @types/apimatic__json-bigint
+```
 
 While most JSON parsers assume numeric values have same precision restrictions as IEEE 754 double, JSON specification _does not_ say anything about number precision. Any floating point number in decimal (optionally scientific) notation is valid JSON value. It's a good idea to serialize values which might fall out of IEEE 754 integer precision as strings in your JSON api, but `{ "value" : 9223372036854775807}`, for example, is still a valid RFC4627 JSON string, and in most JS runtimes the result of `JSON.parse` is this object: `{ value: 9223372036854776000 }`
 
