@@ -29,4 +29,4 @@ interface Options {
 type JSONBigExport = typeof JSONBig & { parse: typeof parse; stringify: typeof stringify };
 
 declare const _: JSONBigExport;
-export = _; 
+export = _;
